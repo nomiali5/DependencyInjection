@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="339ecbd8-32ed-4df5-bb53-8334846e733b" name="UMLClassDiagram1" linkedPackageId="d7e431f5-6ac9-41ee-b628-a78fd42e1e5e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="c0f14c06-192f-487c-9d94-59f029a18fb9">
+      <profileInstance Id="9b7a0885-1d98-4eee-abd1-45017adb3c0c" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="d388e73c-6d50-40d4-89aa-8eea6ecc97ae">
+      <profileInstance Id="9d50cba3-a442-4c55-aa9e-23c7abf7d0b4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <package Id="d7e431f5-6ac9-41ee-b628-a78fd42e1e5e" name="MedicalJournalDiagrams">
+    <elementDefinition Id="6e0ba220-9b2b-4b81-9f5a-ce3e16bfb8d0" />
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,18 @@
+namespace MedicalJournal.Data.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class RetypePasswordRemoved1 : DbMigration
+    {
+        public override void Up()
+        {
+            DropColumn("dbo.Publishers", "ConfirmPassword");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.Publishers", "ConfirmPassword", c => c.String(nullable: false, maxLength: 255));
+        }
+    }
+}

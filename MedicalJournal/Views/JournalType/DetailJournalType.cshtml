@@ -1,0 +1,33 @@
+﻿@model MedicalJournal.Models.JournalTypeModel
+@{
+    ViewBag.Title = "User Detail";
+}
+<div class="book-example panel panel-primary">
+    <div class="panel-heading panel-head">User Detail</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.TypeName, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-9">
+                    @Html.DisplayFor(model => model.TypeName, new { @class = "form-control" })
+                </div>
+                <div class="col-lg-9">
+                    <img src="@Model.FrontImage" style="width:100px;height:100px" />
+                </div>
+            </div>
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-9">
+                        @Html.ActionLink("Edit", "CreateEditJournalType",
+                        new { id = ViewContext.RouteData.Values["id"] },
+                        new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Back to List", "Index",
+                        null, new { @class = "btn btn-success" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>   

@@ -1,0 +1,120 @@
+﻿@model MedicalJournal.Models.MedicalJournalModel
+@{
+    ViewBag.Title = "Create Edit Journal";
+}
+<div class="book-example panel panel-primary">
+    <div class="panel-heading panel-head">Add / Edit Medical Journal</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("CreateEditMedicJournal", "MedicJournal", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-horizontal">
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.JournalTypeID)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Details, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.Details, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ISIImpactFactor, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.ISIImpactFactor, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EISSN, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.EISSN, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ISSN, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.ISSN, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Language, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.Language, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PublishDate, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.PublishDate, new { @class = "form-control datepicker" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Writer, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.Writer, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.WebsiteURL, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(model => model.WebsiteURL, new { @class = "form-control", Placeholder = "e.g: www.google.com" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PdfPath, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        <input type="file" name="UploadFile" id="UploadFile" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FrontImage, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        <input type="file" name="UploadImage" id="UploadImage" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.JournalTypeList, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-9">
+                        @Html.DropDownList("ddJournalTypes", Model.JournalTypeList)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9"></div>
+                    <div class="col-lg-3">
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+                        <button class="btn btn-success" id="Button1" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div> 
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" type="text/javascript"></script>
+    <script src="~/Scripts/MedicalJournalJQ.js"></script>
+<script>
+    $(function () {
+        $("#JournalTypeID").val($("#ddJournalTypes").val());
+        $("#ddJournalTypes").change(function () {
+            $("#JournalTypeID").val($("#ddJournalTypes").val());
+        });
+    });
+</script>
+}
+
+
+
+

@@ -1,0 +1,58 @@
+﻿@model MedicalJournal.Models.MedicalJournalModel
+
+@{
+    ViewBag.Title = "Delete Journal";
+}
+
+<div class="book-example panel panel-primary">
+    <div class="panel-heading panel-head">Delete User</div>
+    <div class="panel-body">
+        <h3>Are you sure you want to delete this?</h3>
+        <h1>@ViewBag.ErrorMessage</h1>
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-9">
+                    @Html.DisplayFor(model => model.Title, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ISSN, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-9">
+                    @Html.DisplayFor(model => model.ISSN, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EISSN, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-9">
+                    @Html.DisplayFor(model => model.EISSN, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Writer, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-9">
+                    @Html.DisplayFor(model => model.Writer, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PublishDate, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-9">
+                    @Html.DisplayFor(model => model.PublishDate, new { @class = "form-control" })
+                </div>
+            </div>
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-9">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

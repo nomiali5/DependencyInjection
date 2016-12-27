@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MedicalJournal.Models.MedicalJournalModel>
+@{bool flag=false;}
+<h2>&nbsp; Search Results</h2>
+@foreach (var item in Model)
+{
+    flag=true;
+    <div class="col-md-12" style="height:300px;">
+        <div class="col-md-2" style="border: solid; border-color: gainsboro; border-width: thin;">
+            <h2>
+                <img style="width:160px; height:250px" src="@item.FrontImage" alt="@item.Title" />
+            </h2>
+        </div>
+        <div class="col-md-9">
+            <h2>@item.Title</h2>
+            <p>
+                @item.Description
+            </p>
+            <strong>By: </strong>@item.Writer<br />
+            <strong>ISSN: </strong>@item.ISSN<br />
+            <strong>EISSN: </strong>@item.EISSN<br /><br />
+            <p style="float:left;margin-right:10px"><a class="btn btn-default" href="@item.PdfPath">Read more &raquo;</a></p>
+            <p><a class="btn btn-default" id="Subscribe" onclick="loadmodal(@item.ID.ToString())">Subscribe &raquo;</a></p>
+        </div>
+    </div>
+}
+@if (!flag) { <h3>No Record Found...</h3> }

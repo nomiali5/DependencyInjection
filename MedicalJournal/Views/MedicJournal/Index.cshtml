@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MedicalJournal.Models.MedicalJournalModel>
+<div class="book-example panel panel-primary">
+    <div class="panel-heading panel-head">Journals Listing</div>
+    <div class="panel-body">
+        <a id="A1" href="@Url.Action("CreateEditMedicJournal")"
+           class="btn btn-success">
+            <span class="glyphicon glyphicon-plus"></span> New Medical Journal
+        </a>
+
+        <table class="table" style="margin: 4px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FrontImage)
+                </th>
+                <th>
+                    @Html.DisplayName("Title")
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Language)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ISSN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Writer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JournalType.TypeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PublishDate)
+                </th>
+                <th>
+                    Action
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.FrontImage" style="width:100px;height:100px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Language)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ISSN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Writer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JournalType.TypeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublishDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "CreateEditMedicJournal",
+                        new { id = item.ID }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Details", "DetailMedicJournal",
+                        new { id = item.ID }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "DeleteMedicJournal",
+                        new { id = item.ID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div> 

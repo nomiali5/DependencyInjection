@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MedicalJournal.Models.JournalTypeModel>
+
+<div class="book-example panel panel-primary">
+    <div class="panel-heading panel-head">Publishers Listing</div>
+    <div class="panel-body">
+        <a id="A1" href="@Url.Action("CreateEditJournalType")"
+           class="btn btn-success">
+            <span class="glyphicon glyphicon-plus"></span> Publisher
+        </a>
+        <table class="table" style="margin: 4px">
+            <tr>
+                <th>
+                    Cover
+                </th>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    Action
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.FrontImage" style="width:100px;height:100px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "CreateEditJournalType",
+                        new { id = item.ID }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Details", "DetailJournalType",
+                        new { id = item.ID }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "DeleteJournalType",
+                        new { id = item.ID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div> 

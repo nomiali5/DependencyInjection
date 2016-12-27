@@ -1,0 +1,135 @@
+﻿@model IEnumerable<MedicalJournal.Models.MedicalJournalModel>
+@{
+    ViewBag.Title = "Free Medical Journals";
+}
+
+<div class="jumbotron">
+    <h1>Free Medical Journals</h1>
+    <p class="lead">Free public medical journals, We work closely with our members, the public health workforce and wider community to develop and implement a wide range of policy and projects to educate and empower individuals, effect change and celebrate excellence.</p>
+    <p>
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="inputsearch" name="inputsearch" placeholder="e.g: Title | ISSN | EISSN | Writer" />
+            </div>
+            <div class="col-md-3" style="line-height:0px; padding-left:0px;">
+                <a class="btn btn-primary btn-md" id="btnSearch">
+                    Search Journals &raquo;
+                </a>
+            </div>
+        </div>
+    </p>
+</div>
+
+<div class="row">
+    <div id="divJournals">
+        <h2>&nbsp; Latest Journals</h2>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-12" style="height:300px;">
+                <div class="col-md-2" style="border: solid; border-color: gainsboro; border-width: thin;">
+                    <h2>
+                        <img style="width:160px; height:250px" src="@item.FrontImage" alt="@item.Title" />
+                    </h2>
+                </div>
+                <div class="col-md-9">
+                    <h2>@item.Title</h2>
+                    <p>
+                        @item.Description
+                    </p>
+                    <strong>By: </strong>@item.Writer<br />
+                    <strong>ISSN: </strong>@item.ISSN<br />
+                    <strong>EISSN: </strong>@item.EISSN<br /><br />
+                    <p style="float:left;margin-right:10px"><a class="btn btn-default" href="@item.PdfPath">Read more &raquo;</a></p>
+                    <p><a class="btn btn-default" id="Subscribe" onclick="loadmodal(@item.ID.ToString())">Subscribe &raquo;</a></p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Medical Journal Subscription</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Enter Your Email</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="email" id="email" name="email" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalSave" data-id="" class="btn btn-info">Save</button>
+                <button type="button" id="btnModalCancel" data-id="" data-dismiss="modal" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function loadmodal(jid) {
+            $("#btnModalSave").data("id", jid);
+            $("#myModal").modal("show");
+        };
+        $(function () {
+            $("#btnSearch").click(function () {
+                var query = $("#inputsearch").val();
+                $.ajax({
+                    url: '@Url.Action("Search")',
+                    type: 'GET',
+                    data: {
+                        Query: query,
+                    },
+                    success: function (result) {
+                        if (result != null) {
+                            $("#divJournals").html(result);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $("#btnModalSave").click(function () {
+                var email = $("#email").val();
+                var jid = $(this).data("id");
+                $('#email').filter(function () {
+                    var emil = $('#email').val();
+                    var emailReg = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+                    if (!emailReg.test(emil) || emil == "") {
+                        alert('Please enter valid email');
+                        return;
+                    } else {
+                        $.ajax({
+                            url: '@Url.Action("Subscribe")',
+                            type: 'POST',
+                            data: {
+                                Email: email,
+                                JournalID: jid,
+                            },
+                            success: function (result) {
+                                if (result.response != false) {
+                                    $("#email").val("");
+                                    alert("Subscribe successfully");
+                                }
+                            },
+                            error: function () {
+                            }
+                        });
+                    }
+                    $("#myModal").modal("hide");
+                })
+            });
+        });
+    </script>
+}
+
