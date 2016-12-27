@@ -59,54 +59,6 @@
     <Compile Include="Mapping\JournalTypeMap.cs" />
     <Compile Include="Mapping\PublisherProfileMap.cs" />
     <Compile Include="Mapping\PublisherMap.cs" />
-    <Compile Include="Migrations\201612240957478_InitialCreate.cs" />
-    <Compile Include="Migrations\201612240957478_InitialCreate.Designer.cs">
-      <DependentUpon>201612240957478_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612241022505_InitialCreate1.cs" />
-    <Compile Include="Migrations\201612241022505_InitialCreate1.Designer.cs">
-      <DependentUpon>201612241022505_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612241032391_RetypePasswordRemoved.cs" />
-    <Compile Include="Migrations\201612241032391_RetypePasswordRemoved.Designer.cs">
-      <DependentUpon>201612241032391_RetypePasswordRemoved.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612241048113_IncludeRetypePassword.cs" />
-    <Compile Include="Migrations\201612241048113_IncludeRetypePassword.Designer.cs">
-      <DependentUpon>201612241048113_IncludeRetypePassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612241145492_RetypePasswordRemoved1.cs" />
-    <Compile Include="Migrations\201612241145492_RetypePasswordRemoved1.Designer.cs">
-      <DependentUpon>201612241145492_RetypePasswordRemoved1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612251237234_journaltype.cs" />
-    <Compile Include="Migrations\201612251237234_journaltype.Designer.cs">
-      <DependentUpon>201612251237234_journaltype.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612260833501_Update-schema-ISSN.cs" />
-    <Compile Include="Migrations\201612260833501_Update-schema-ISSN.Designer.cs">
-      <DependentUpon>201612260833501_Update-schema-ISSN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612260934254_Update-schema.cs" />
-    <Compile Include="Migrations\201612260934254_Update-schema.Designer.cs">
-      <DependentUpon>201612260934254_Update-schema.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612261047309_Front-Image Added.cs" />
-    <Compile Include="Migrations\201612261047309_Front-Image Added.Designer.cs">
-      <DependentUpon>201612261047309_Front-Image Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612261109150_Front-Image Added2.cs" />
-    <Compile Include="Migrations\201612261109150_Front-Image Added2.Designer.cs">
-      <DependentUpon>201612261109150_Front-Image Added2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612261300242_subscriber-added.cs" />
-    <Compile Include="Migrations\201612261300242_subscriber-added.Designer.cs">
-      <DependentUpon>201612261300242_subscriber-added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612261853191_intialization.cs" />
-    <Compile Include="Migrations\201612261853191_intialization.Designer.cs">
-      <DependentUpon>201612261853191_intialization.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201612270741148_init-office.cs" />
     <Compile Include="Migrations\201612270741148_init-office.Designer.cs">
       <DependentUpon>201612270741148_init-office.cs</DependentUpon>
@@ -128,42 +80,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612240957478_InitialCreate.resx">
-      <DependentUpon>201612240957478_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612241022505_InitialCreate1.resx">
-      <DependentUpon>201612241022505_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612241032391_RetypePasswordRemoved.resx">
-      <DependentUpon>201612241032391_RetypePasswordRemoved.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612241048113_IncludeRetypePassword.resx">
-      <DependentUpon>201612241048113_IncludeRetypePassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612241145492_RetypePasswordRemoved1.resx">
-      <DependentUpon>201612241145492_RetypePasswordRemoved1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612251237234_journaltype.resx">
-      <DependentUpon>201612251237234_journaltype.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612260833501_Update-schema-ISSN.resx">
-      <DependentUpon>201612260833501_Update-schema-ISSN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612260934254_Update-schema.resx">
-      <DependentUpon>201612260934254_Update-schema.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612261047309_Front-Image Added.resx">
-      <DependentUpon>201612261047309_Front-Image Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612261109150_Front-Image Added2.resx">
-      <DependentUpon>201612261109150_Front-Image Added2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612261300242_subscriber-added.resx">
-      <DependentUpon>201612261300242_subscriber-added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612261853191_intialization.resx">
-      <DependentUpon>201612261853191_intialization.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612270741148_init-office.resx">
       <DependentUpon>201612270741148_init-office.cs</DependentUpon>
     </EmbeddedResource>

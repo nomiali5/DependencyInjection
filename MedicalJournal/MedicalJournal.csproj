@@ -227,18 +227,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612241025559_InitialCreate.cs" />
-    <Compile Include="Migrations\201612241025559_InitialCreate.Designer.cs">
-      <DependentUpon>201612241025559_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612241224549_CustomFields.cs" />
-    <Compile Include="Migrations\201612241224549_CustomFields.Designer.cs">
-      <DependentUpon>201612241224549_CustomFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612260836200_Update-schema-ISSN.cs" />
-    <Compile Include="Migrations\201612260836200_Update-schema-ISSN.Designer.cs">
-      <DependentUpon>201612260836200_Update-schema-ISSN.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201612261854231_intialization.cs" />
     <Compile Include="Migrations\201612261854231_intialization.Designer.cs">
       <DependentUpon>201612261854231_intialization.cs</DependentUpon>
@@ -410,15 +398,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612241025559_InitialCreate.resx">
-      <DependentUpon>201612241025559_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612241224549_CustomFields.resx">
-      <DependentUpon>201612241224549_CustomFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612260836200_Update-schema-ISSN.resx">
-      <DependentUpon>201612260836200_Update-schema-ISSN.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612261854231_intialization.resx">
       <DependentUpon>201612261854231_intialization.cs</DependentUpon>
     </EmbeddedResource>
